@@ -5,7 +5,7 @@ import { CheckCircle, Users, FlaskConical, Award, Microscope, Shield, Heart } fr
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div>
       {/* Hero Section */}
       <section className="py-20 bg-subtle-gradient">
         <div className="container mx-auto px-6">

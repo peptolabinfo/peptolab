@@ -6,7 +6,7 @@ import ContactCTA from "@/components/ContactCTA";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div>
       <Hero />
       <ProductCategories />
       <FeaturedProducts />

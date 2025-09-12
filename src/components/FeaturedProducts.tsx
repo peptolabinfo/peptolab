@@ -223,13 +223,14 @@ const FeaturedProducts = () => {
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     {product.inStock ? "Add to Cart" : "Notify Me"}
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="icon"
-                    onClick={() => viewProductDetails(product)}
-                  >
-                    <Info className="w-4 h-4" />
-                  </Button>
+                  <Link to={`/product/${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}`}>
+                    <Button 
+                      variant="outline" 
+                      size="icon"
+                    >
+                      <Info className="w-4 h-4" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -171,7 +172,7 @@ const Products = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div>
       {/* Header */}
       <section className="py-16 bg-subtle-gradient">
         <div className="container mx-auto px-6">
@@ -318,13 +319,14 @@ const Products = () => {
                       <ShoppingCart className="w-4 h-4 mr-2" />
                       {product.inStock ? "Add to Cart" : "Notify Me"}
                     </Button>
+                  <Link to={`/product/${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}`}>
                     <Button 
                       variant="outline" 
                       size="icon"
-                      onClick={() => viewProductDetails(product)}
                     >
                       <Info className="w-4 h-4" />
                     </Button>
+                  </Link>
                   </div>
                 </CardContent>
               </Card>
