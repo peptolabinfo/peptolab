@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Star, ShoppingCart, Info, Search, Filter } from "lucide-react";
+import { Info, Search, Filter } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const allProducts = [
@@ -304,14 +304,6 @@ const Products = () => {
                   <CardDescription className="text-sm text-muted-foreground">
                     {product.fullName}
                   </CardDescription>
-                  
-                  <div className="flex items-center gap-2 mt-2">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="text-sm font-medium">{product.rating}</span>
-                    </div>
-                    <span className="text-sm text-muted-foreground">({product.reviews})</span>
-                  </div>
                 </CardHeader>
                 
                 <CardContent className="space-y-4">
@@ -333,22 +325,14 @@ const Products = () => {
                     </div>
                   </div>
                   
-                  <div className="flex gap-2 pt-2">
-                    <Button 
-                      variant={product.inStock ? "default" : "secondary"} 
-                      className="flex-1"
-                      disabled={!product.inStock}
-                      onClick={() => addToCart(product)}
-                    >
-                      <ShoppingCart className="w-4 h-4 mr-2" />
-                      {product.inStock ? "Add to Cart" : "Notify Me"}
-                    </Button>
+                  <div className="flex justify-center pt-2">
                   <Link to={`/product/${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}`}>
                     <Button 
                       variant="outline" 
-                      size="icon"
+                      className="w-full"
                     >
-                      <Info className="w-4 h-4" />
+                      <Info className="w-4 h-4 mr-2" />
+                      View Details
                     </Button>
                   </Link>
                   </div>
