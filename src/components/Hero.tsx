@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
-          <div className="mb-8">
+          <div className="mb-8 animate-bounce-in">
             <img 
               src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
               alt="PeptoLab - Peptides & Supplements" 
@@ -32,20 +32,20 @@ const Hero = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-hero-gradient bg-clip-text text-transparent leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-hero-gradient bg-clip-text text-transparent leading-tight animate-fade-in" style={{ animationDelay: '0.3s' }}>
             Advanced Peptide
             <br />
             <span className="text-foreground">Solutions</span>
           </h1>
           
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.6s' }}>
             Discover scientifically-backed peptides and supplements designed to optimize your health, 
             performance, and longevity with pharmaceutical-grade quality.
           </p>
           
           {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-muted-foreground">
+          <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-muted-foreground animate-fade-in" style={{ animationDelay: '0.9s' }}>
             <div className="flex items-center gap-2">
               <Award className="w-5 h-5 text-primary" />
               <span>Lab Tested</span>
@@ -63,7 +63,7 @@ const Hero = () => {
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in" style={{ animationDelay: '1.2s' }}>
             <Link to="/products">
               <Button variant="hero" size="lg" className="group w-full sm:w-auto">
                 Explore Products

@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Dna, Zap, Heart, Brain, Dumbbell, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const categories = [
   {
@@ -52,7 +53,7 @@ const ProductCategories = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <AnimatedSection animation="slide-up" className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Product Categories
           </h2>
@@ -60,19 +61,23 @@ const ProductCategories = () => {
             Explore our comprehensive range of research-grade peptides, each category 
             carefully curated for specific health and performance goals.
           </p>
-        </div>
+        </AnimatedSection>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card 
-                key={index} 
-                className="group hover:shadow-card-custom transition-smooth border-border/50 bg-gradient-to-br hover:border-primary/20"
-                style={{
-                  backgroundImage: `linear-gradient(to bottom right, var(--card), var(--card))`
-                }}
+              <AnimatedSection 
+                key={index}
+                animation="slide-in-left"
+                delay={index * 100}
               >
+                <Card 
+                  className="group hover:shadow-card-custom hover:-translate-y-1 transition-all duration-300 border-border/50 bg-gradient-to-br hover:border-primary/20 hover:shadow-lg hover:shadow-primary/10"
+                  style={{
+                    backgroundImage: `linear-gradient(to bottom right, var(--card), var(--card))`
+                  }}
+                >
                 <CardHeader className="pb-4">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-4 group-hover:shadow-molecular transition-smooth`}>
                     <IconComponent className="w-6 h-6 text-primary" />
@@ -105,7 +110,8 @@ const ProductCategories = () => {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
+                </Card>
+              </AnimatedSection>
             );
           })}
         </div>

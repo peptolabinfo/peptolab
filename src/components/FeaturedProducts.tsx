@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, ShoppingCart, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const products = [
   {
@@ -118,7 +119,7 @@ const FeaturedProducts = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <AnimatedSection animation="slide-up" className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Featured Products
           </h2>
@@ -126,16 +127,20 @@ const FeaturedProducts = () => {
             Our most popular research-grade peptides, trusted by researchers and 
             health optimization enthusiasts worldwide.
           </p>
-        </div>
+        </AnimatedSection>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <Card 
-              key={product.id} 
-              className={`group hover:shadow-card-custom transition-smooth border-border/50 bg-card relative overflow-hidden ${
-                product.featured ? 'ring-2 ring-primary/20' : ''
-              }`}
+          {products.map((product, index) => (
+            <AnimatedSection
+              key={product.id}
+              animation="scale-in" 
+              delay={index * 150}
             >
+              <Card 
+                className={`group hover:shadow-card-custom hover:-translate-y-2 transition-all duration-300 border-border/50 bg-card relative overflow-hidden hover:shadow-lg hover:shadow-primary/20 ${
+                  product.featured ? 'ring-2 ring-primary/20' : ''
+                }`}
+              >
               {product.featured && (
                 <div className="absolute top-4 left-4 z-10">
                   <Badge className="bg-primary text-primary-foreground">
@@ -233,17 +238,18 @@ const FeaturedProducts = () => {
                   </Link>
                 </div>
               </CardContent>
-            </Card>
+              </Card>
+            </AnimatedSection>
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <AnimatedSection animation="bounce-in" delay={600} className="text-center mt-12">
           <Link to="/products">
-            <Button variant="scientific" size="lg">
+            <Button variant="scientific" size="lg" className="hover:animate-glow-pulse">
               View All Products
             </Button>
           </Link>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
