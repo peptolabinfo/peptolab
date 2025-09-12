@@ -7,31 +7,6 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "luc
 const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
-      {/* Newsletter Section */}
-      <div className="bg-subtle-gradient">
-        <div className="container mx-auto px-6 py-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">
-              Stay Updated on Peptide Research
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Get the latest research findings, product updates, and exclusive offers delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input 
-                placeholder="Enter your email" 
-                type="email"
-                className="flex-1"
-              />
-              <Button variant="default">
-                <Mail className="w-4 h-4 mr-2" />
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

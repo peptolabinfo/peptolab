@@ -152,46 +152,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Certifications */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
-              Certifications & Standards
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
-              {[
-                "cGMP Certified",
-                "Third-Party Tested",
-                "FDA Registered Facility",
-                "ISO 9001:2015",
-                "Certificate of Analysis",
-                "Research Grade"
-              ].map((cert, index) => (
-                <Badge 
-                  key={index} 
-                  variant="secondary" 
-                  className="px-4 py-3 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-smooth text-sm"
-                >
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  {cert}
-                </Badge>
-              ))}
-            </div>
-
-            <p className="text-lg text-muted-foreground mb-8">
-              All our products come with a Certificate of Analysis (COA) showing detailed 
-              purity and potency testing results from independent laboratories.
-            </p>
-
-            <Button variant="scientific" size="lg">
-              Download Sample COA
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
