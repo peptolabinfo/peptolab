@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { Mail, Phone, ArrowRight } from "lucide-react";
 
 const ContactCTA = () => {
   return (
@@ -27,15 +27,7 @@ const ContactCTA = () => {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Live Chat</h3>
-                  <p className="text-sm opacity-80">Instant expert support</p>
-                </div>
-                
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
                   <div className="w-12 h-12 mx-auto mb-3 bg-primary-foreground/20 rounded-full flex items-center justify-center">
                     <Mail className="w-6 h-6" />

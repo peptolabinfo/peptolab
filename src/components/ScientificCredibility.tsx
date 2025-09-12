@@ -4,7 +4,6 @@ import { CheckCircle, Users, FlaskConical, Award } from "lucide-react";
 
 const stats = [
   { number: "99.9%", label: "Purity Guaranteed", icon: FlaskConical },
-  { number: "10,000+", label: "Satisfied Customers", icon: Users },
   { number: "50+", label: "Research Partners", icon: Award },
   { number: "24/7", label: "Quality Control", icon: CheckCircle }
 ];
@@ -22,7 +21,7 @@ const ScientificCredibility = () => {
     <section className="py-20 bg-subtle-gradient">
       <div className="container mx-auto px-6">
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
