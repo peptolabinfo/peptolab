@@ -7,8 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { 
   Star, 
-  ShoppingCart, 
-  Heart, 
   Share2, 
   ChevronLeft, 
   Shield, 
@@ -115,7 +113,6 @@ const ProductDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [quantity, setQuantity] = useState(1);
 
   const product = slug ? productData[slug] : null;
 
@@ -133,18 +130,31 @@ const ProductDetail = () => {
     );
   }
 
-  const addToCart = () => {
-    toast({
-      title: "Added to Cart!",
-      description: `${quantity}x ${product.name} added to your cart.`,
-    });
-  };
+  const shareProduct = async () => {
+    const url = window.location.href;
+    const shareData = {
+      title: `${product.name} - ${product.fullName}`,
+      text: `Check out this research-grade peptide: ${product.description}`,
+      url: url,
+    };
 
-  const addToWishlist = () => {
-    toast({
-      title: "Added to Wishlist!",
-      description: `${product.name} has been saved to your wishlist.`,
-    });
+    try {
+      if (navigator.share && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(url);
+        toast({
+          title: "Link Copied!",
+          description: "Product link has been copied to your clipboard.",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Share Failed",
+        description: "Unable to share this product. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -232,47 +242,18 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Add to Cart Section */}
+            {/* Product Actions */}
             <Card>
               <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex items-center border rounded-lg">
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    >
-                      -
-                    </Button>
-                    <span className="px-4 py-2 min-w-12 text-center">{quantity}</span>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      onClick={() => setQuantity(quantity + 1)}
-                    >
-                      +
-                    </Button>
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    ${(product.price * quantity).toFixed(2)} total
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
+                <div className="flex justify-center">
                   <Button 
-                    variant="default" 
+                    variant="outline" 
                     size="lg" 
-                    className="flex-1"
-                    onClick={addToCart}
+                    onClick={shareProduct}
+                    className="flex items-center gap-2"
                   >
-                    <ShoppingCart className="w-4 h-4 mr-2" />
-                    Add to Cart
-                  </Button>
-                  <Button variant="outline" size="lg" onClick={addToWishlist}>
-                    <Heart className="w-4 h-4" />
-                  </Button>
-                  <Button variant="outline" size="lg">
                     <Share2 className="w-4 h-4" />
+                    Share Product
                   </Button>
                 </div>
 
