@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Microscope } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -63,13 +64,17 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="group">
-              Explore Products
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="scientific" size="lg">
-              Learn About Peptides
-            </Button>
+            <Link to="/products">
+              <Button variant="hero" size="lg" className="group">
+                Explore Products
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button variant="scientific" size="lg">
+                Learn About Peptides
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

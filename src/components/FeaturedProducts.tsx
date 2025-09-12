@@ -2,6 +2,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, ShoppingCart, Info } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const products = [
   {
@@ -98,6 +100,21 @@ const products = [
 ];
 
 const FeaturedProducts = () => {
+  const { toast } = useToast();
+
+  const addToCart = (product: any) => {
+    toast({
+      title: "Added to Cart!",
+      description: `${product.name} has been added to your cart.`,
+    });
+  };
+
+  const viewProductDetails = (product: any) => {
+    toast({
+      title: "Product Details",
+      description: `Viewing details for ${product.name}. Full product pages coming soon!`,
+    });
+  };
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -201,11 +218,16 @@ const FeaturedProducts = () => {
                     variant={product.inStock ? "default" : "secondary"} 
                     className="flex-1 group"
                     disabled={!product.inStock}
+                    onClick={() => addToCart(product)}
                   >
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     {product.inStock ? "Add to Cart" : "Notify Me"}
                   </Button>
-                  <Button variant="outline" size="icon">
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    onClick={() => viewProductDetails(product)}
+                  >
                     <Info className="w-4 h-4" />
                   </Button>
                 </div>
@@ -215,9 +237,11 @@ const FeaturedProducts = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="scientific" size="lg">
-            View All Products
-          </Button>
+          <Link to="/products">
+            <Button variant="scientific" size="lg">
+              View All Products
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

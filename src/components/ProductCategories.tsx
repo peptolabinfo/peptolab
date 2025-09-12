@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dna, Zap, Heart, Brain, Dumbbell, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -97,10 +98,12 @@ const ProductCategories = () => {
                       ))}
                     </div>
                   </div>
-                  <Button variant="scientific" className="w-full group">
-                    View Products
-                    <Dna className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
-                  </Button>
+                  <Link to="/products">
+                    <Button variant="scientific" className="w-full group">
+                      View Products
+                      <Dna className="ml-2 h-4 w-4 transition-transform group-hover:rotate-12" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             );
