@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -137,6 +137,30 @@ const Products = () => {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [sortBy, setSortBy] = useState("name");
   const { toast } = useToast();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handle URL parameters for category filtering
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const categoryParam = params.get('category');
+    if (categoryParam) {
+      setCategoryFilter(categoryParam);
+    }
+  }, [location.search]);
+
+  // Update URL when category filter changes
+  const handleCategoryChange = (newCategory: string) => {
+    setCategoryFilter(newCategory);
+    const params = new URLSearchParams(location.search);
+    if (newCategory === "all") {
+      params.delete('category');
+    } else {
+      params.set('category', newCategory);
+    }
+    const newSearch = params.toString();
+    navigate(`/products${newSearch ? `?${newSearch}` : ''}`, { replace: true });
+  };
 
   const categories = ["all", ...new Set(allProducts.map(p => p.category))];
 
@@ -202,7 +226,7 @@ const Products = () => {
                 />
               </div>
               
-              <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+              <Select value={categoryFilter} onValueChange={handleCategoryChange}>
                 <SelectTrigger className="w-full sm:w-48">
                   <Filter className="w-4 h-4 mr-2" />
                   <SelectValue placeholder="Category" />

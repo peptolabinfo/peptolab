@@ -1,35 +1,7 @@
-import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    category: "",
-    message: ""
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", subject: "", category: "", message: "" });
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
 
   return (
     <div>
@@ -131,101 +103,16 @@ const Contact = () => {
               </Card>
             </div>
 
-            {/* Contact Form */}
+            {/* FAQ Section */}
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Send us a Message</CardTitle>
+                  <CardTitle>Frequently Asked Questions</CardTitle>
                   <CardDescription>
-                    Fill out the form below and we'll get back to you within 24 hours.
+                    Common questions about our products and services
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          value={formData.name}
-                          onChange={(e) => handleInputChange("name", e.target.value)}
-                          placeholder="Enter your full name"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange("email", e.target.value)}
-                          placeholder="Enter your email"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="category">Inquiry Type</Label>
-                        <Select value={formData.category} onValueChange={(value) => handleInputChange("category", value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select category" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="product">Product Information</SelectItem>
-                            <SelectItem value="order">Order Support</SelectItem>
-                            <SelectItem value="consultation">Free Consultation</SelectItem>
-                            <SelectItem value="research">Research Partnership</SelectItem>
-                            <SelectItem value="quality">Quality & Testing</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="subject">Subject *</Label>
-                        <Input
-                          id="subject"
-                          value={formData.subject}
-                          onChange={(e) => handleInputChange("subject", e.target.value)}
-                          placeholder="Brief subject line"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => handleInputChange("message", e.target.value)}
-                        placeholder="Please provide details about your inquiry, including any specific peptides you're interested in, your goals, and any questions you have."
-                        rows={6}
-                        required
-                      />
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button type="submit" variant="hero" size="lg" className="group">
-                        <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
-                        Send Message
-                      </Button>
-                      <Button type="button" variant="scientific" size="lg">
-                        Schedule Consultation Call
-                      </Button>
-                    </div>
-                  </form>
-                </CardContent>
-              </Card>
-
-              {/* FAQ Section */}
-              <Card className="mt-8">
-                <CardHeader>
-                  <CardTitle>Frequently Asked Questions</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-6">
                   <div>
                     <h4 className="font-semibold mb-2">How long does shipping take?</h4>
                     <p className="text-sm text-muted-foreground">
@@ -245,6 +132,27 @@ const Contact = () => {
                     <p className="text-sm text-muted-foreground">
                       We offer a 30-day satisfaction guarantee on all unopened products. 
                       If you're not completely satisfied, we'll provide a full refund.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Are these products safe for research use?</h4>
+                    <p className="text-sm text-muted-foreground">
+                      All our products are manufactured in cGMP facilities and undergo rigorous testing. 
+                      They are intended for research purposes only and should be handled by qualified personnel.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Do you offer bulk pricing for research institutions?</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Yes, we offer competitive bulk pricing for qualified research institutions and laboratories. 
+                      Contact our team for custom pricing on large orders.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">What storage conditions are required?</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Most peptides should be stored at -20°C in a freeze-resistant container. 
+                      Detailed storage instructions are provided with each product's Certificate of Analysis.
                     </p>
                   </div>
                 </CardContent>

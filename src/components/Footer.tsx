@@ -91,19 +91,19 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-foreground">Categories</h4>
             <ul className="space-y-2">
               {[
-                "Recovery & Healing",
-                "Growth & Longevity", 
-                "Cognitive Enhancement",
-                "Anti-Aging",
-                "Growth Hormone",
-                "Research Compounds"
-              ].map((category) => (
-                <li key={category}>
+                { name: "Recovery & Healing", category: "Recovery & Healing" },
+                { name: "Growth & Longevity", category: "Growth & Longevity" }, 
+                { name: "Cognitive Enhancement", category: "Cognitive Enhancement" },
+                { name: "Anti-Aging", category: "Anti-Aging" },
+                { name: "Growth Hormone", category: "Growth Hormone" },
+                { name: "Research Compounds", category: "Recovery & Performance" }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link 
-                    to="/products"
+                    to={`/products?category=${encodeURIComponent(item.category)}`}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors story-link"
                   >
-                    {category}
+                    {item.name}
                   </Link>
                 </li>
               ))}
