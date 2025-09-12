@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { 
-  Star, 
   Share2, 
   ChevronLeft, 
   Shield, 
@@ -203,19 +202,7 @@ const ProductDetail = () => {
                 )}
               </div>
               <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
-              <p className="text-lg text-muted-foreground mb-4">{product.fullName}</p>
-              
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center gap-1">
-                  <Star className="w-5 h-5 fill-primary text-primary" />
-                  <span className="font-medium">{product.rating}</span>
-                  <span className="text-muted-foreground">({product.reviews} reviews)</span>
-                </div>
-                <div className="text-sm">
-                  <span className="text-muted-foreground">Purity: </span>
-                  <span className="font-semibold text-primary">{product.purity}</span>
-                </div>
-              </div>
+              <p className="text-lg text-muted-foreground mb-6">{product.fullName}</p>
 
               <div className="flex items-baseline gap-3 mb-6">
                 <span className="text-3xl font-bold text-primary">${product.price}</span>
