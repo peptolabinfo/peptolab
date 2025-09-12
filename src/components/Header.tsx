@@ -25,10 +25,10 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <img 
               src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
-              alt="PeptoLab" 
+              alt="PeptoLab - Premium Peptides & Supplements" 
               className="h-8 w-auto"
             />
           </Link>
@@ -52,11 +52,12 @@ const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <Button variant="ghost" size="icon" className="relative">
+            <Button variant="ghost" size="icon" className="relative hover:bg-accent transition-smooth focus-visible:ring-primary">
               <ShoppingCart className="h-4 w-4" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center font-medium">
                 0
               </span>
+              <span className="sr-only">Shopping cart with 0 items</span>
             </Button>
             <Link to="/contact">
               <Button variant="default" size="sm">
@@ -68,24 +69,26 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="md:hidden hover:bg-accent transition-smooth focus-visible:ring-primary">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">Open navigation menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <div className="flex items-center justify-between mb-8">
                 <img 
                   src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
-                  alt="PeptoLab" 
+                  alt="PeptoLab - Premium Peptides & Supplements" 
                   className="h-8 w-auto"
                 />
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsOpen(false)}
+                  className="hover:bg-accent transition-smooth"
                 >
                   <X className="h-5 w-5" />
+                  <span className="sr-only">Close navigation menu</span>
                 </Button>
               </div>
               
