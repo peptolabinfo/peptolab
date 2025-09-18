@@ -25,14 +25,15 @@ const Hero = () => {
           {/* Logo */}
           <div className="mb-8 animate-bounce-in">
             <img 
-              src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
-              alt="PeptoLab - Peptides & Supplements" 
-              className="mx-auto h-20 w-auto"
+              src="/lovable-uploads/logo1.PNG" 
+              alt="PeptoLab - Premium Peptides & Supplements" 
+              className="mx-auto w-auto"
+              style={{ height: "32rem" }}
             />
           </div>
           
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-hero-gradient bg-clip-text text-transparent leading-tight animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 bg-hero-gradient bg-clip-text text-transparent leading-tight animate-fade-in" style={{ animationDelay: '0.3s' }}>
             Advanced Peptide
             <br />
             <span className="text-foreground">Solutions</span>
