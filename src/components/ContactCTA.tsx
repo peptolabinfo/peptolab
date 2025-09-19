@@ -46,27 +46,7 @@ const ContactCTA = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
-                  <Button 
-                    variant="secondary" 
-                    size="lg" 
-                    className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 group"
-                  >
-                    Start Free Consultation
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link to="/products">
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                  >
-                    Browse Catalog
-                  </Button>
-                </Link>
-              </div>
+              {/* Buttons removed as requested */}
             </CardContent>
           </Card>
         </div>

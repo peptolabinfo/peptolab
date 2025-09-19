@@ -40,15 +40,8 @@ const Contact = () => {
                     <div>
                       <strong>General Inquiries:</strong>
                       <br />
-                      <a href="mailto:info@peptolab.com" className="text-primary hover:underline">
-                        info@peptolab.com
-                      </a>
-                    </div>
-                    <div>
-                      <strong>Product Support:</strong>
-                      <br />
-                      <a href="mailto:support@peptolab.com" className="text-primary hover:underline">
-                        support@peptolab.com
+                      <a href="mailto:info@peptolab.ps" className="text-primary hover:underline">
+                        info@peptolab.ps
                       </a>
                     </div>
                   </div>
@@ -70,35 +63,15 @@ const Contact = () => {
                     <div>
                       <strong>Toll-Free:</strong>
                       <br />
-                      <a href="tel:+1-800-PEPTIDES" className="text-primary hover:underline">
-                        +1 (800) PEPTIDES
+                      <a href="tel:+972595406899" className="text-primary hover:underline">
+                        +972 59-540-6899
                       </a>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Clock className="w-4 h-4" />
-                      Mon-Fri: 9AM-6PM EST
+                      Mon-Sat: 9AM-10PM
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    Research Facility
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    FDA-registered, cGMP certified facility
-                  </p>
-                  <address className="not-italic text-sm">
-                    PeptoLab Research Center<br />
-                    123 Science Drive<br />
-                    Biotech Park, CA 90210<br />
-                    United States
-                  </address>
                 </CardContent>
               </Card>
             </div>

@@ -38,8 +38,8 @@ const Footer = () => {
               <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-sm text-muted-foreground">Email</div>
-                <a href="mailto:info@peptolab.com" className="text-sm hover:text-primary transition-colors">
-                  info@peptolab.com
+                <a href="mailto:info@peptolab.ps" className="text-sm hover:text-primary transition-colors">
+                  info@peptolab.ps
                 </a>
               </div>
             </div>
@@ -47,8 +47,8 @@ const Footer = () => {
               <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-sm text-muted-foreground">Phone</div>
-                <a href="tel:+1-800-PEPTIDES" className="text-sm hover:text-primary transition-colors">
-                  +1 (800) PEPTIDES
+                <a href="tel:+972595406899" className="text-sm hover:text-primary transition-colors">
+                  +972 59-540-6899
                 </a>
               </div>
             </div>
@@ -57,8 +57,7 @@ const Footer = () => {
               <div>
                 <div className="text-sm text-muted-foreground">Address</div>
                 <p className="text-sm">
-                  123 Science Drive<br />
-                  Biotech Park, CA 90210
+                  Bethlehem, PS
                 </p>
               </div>
             </div>
