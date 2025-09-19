@@ -11,124 +11,53 @@ import { useToast } from "@/hooks/use-toast";
 const allProducts = [
   {
     id: 1,
-    name: "BPC-157",
-    fullName: "Body Protection Compound-157",
-    category: "Recovery & Healing",
-    price: 89.99,
-    originalPrice: 99.99,
-    purity: "99.9%",
-    size: "5mg",
-    rating: 4.9,
-    reviews: 127,
-    benefits: ["Accelerated healing", "Gut health support", "Joint protection"],
-    description: "A powerful healing peptide that promotes tissue repair and reduces inflammation.",
-    inStock: true,
-    featured: true
+    name: "GHRP-6",
+    fullName: "GHRP-6 10mg",
+    category: "Growth Hormone",
+    price: 500,
+    size: "10mg",
+    description: "GHRP-6 peptide, 10mg vial.",
+    currency: "ILS"
   },
   {
     id: 2,
-    name: "TB-500",
-    fullName: "Thymosin Beta-4",
-    category: "Recovery & Performance",
-    price: 129.99,
-    purity: "99.8%",
+    name: "Retatrutide",
+    fullName: "Retatrutide 5mg",
+    category: "Weight Management",
+    price: 650,
     size: "5mg",
-    rating: 4.8,
-    reviews: 89,
-    benefits: ["Muscle recovery", "Wound healing", "Flexibility"],
-    description: "Enhanced recovery peptide for athletes and active individuals.",
-    inStock: true,
-    featured: true
+    description: "Retatrutide peptide, 5mg vial.",
+    currency: "ILS"
   },
   {
     id: 3,
-    name: "Ipamorelin",
-    fullName: "Growth Hormone Releasing Peptide",
-    category: "Growth & Longevity",
-    price: 149.99,
-    purity: "99.9%",
-    size: "5mg",
-    rating: 4.9,
-    reviews: 203,
-    benefits: ["Growth hormone release", "Better sleep", "Muscle growth"],
-    description: "Selective growth hormone secretagogue with minimal side effects.",
-    inStock: true,
-    featured: true
+    name: "GHK-Cu",
+    fullName: "GHK-Cu 10mg",
+    category: "Anti-Aging",
+    price: 500,
+    size: "10mg",
+    description: "GHK-Cu peptide, 10mg vial.",
+    currency: "ILS"
   },
   {
     id: 4,
-    name: "Epitalon",
-    fullName: "Epithalamin",
-    category: "Anti-Aging",
-    price: 199.99,
-    purity: "99.7%",
-    size: "10mg",
-    rating: 4.7,
-    reviews: 156,
-    benefits: ["Telomere support", "Longevity", "Sleep regulation"],
-    description: "Pioneering anti-aging peptide for cellular regeneration and longevity.",
-    inStock: true,
-    featured: false
+    name: "BPC-157 + TB-500",
+    fullName: "BPC-157 (3mg) + TB-500 (2mg)",
+    category: "Recovery & Healing",
+    price: 550,
+    size: "3mg + 2mg",
+    description: "BPC-157 (3mg) + TB-500 (2mg) combo vial.",
+    currency: "ILS"
   },
   {
     id: 5,
-    name: "CJC-1295",
-    fullName: "Modified Growth Releasing Factor",
-    category: "Growth Hormone",
-    price: 119.99,
-    purity: "99.8%",
-    size: "5mg",
-    rating: 4.8,
-    reviews: 174,
-    benefits: ["Sustained GH release", "Muscle growth", "Fat loss"],
-    description: "Long-acting growth hormone releasing factor for sustained benefits.",
-    inStock: false,
-    featured: false
-  },
-  {
-    id: 6,
-    name: "Selank",
-    fullName: "Nootropic Anxiolytic Peptide",
-    category: "Cognitive Enhancement",
-    price: 79.99,
-    purity: "99.9%",
-    size: "5mg",
-    rating: 4.6,
-    reviews: 92,
-    benefits: ["Anxiety reduction", "Cognitive boost", "Mood enhancement"],
-    description: "Nootropic peptide for cognitive enhancement and stress reduction.",
-    inStock: true,
-    featured: false
-  },
-  {
-    id: 7,
-    name: "GHK-Cu",
-    fullName: "Copper Peptide",
-    category: "Anti-Aging",
-    price: 159.99,
-    purity: "99.8%",
-    size: "50mg",
-    rating: 4.5,
-    reviews: 78,
-    benefits: ["Skin regeneration", "Wound healing", "Anti-aging"],
-    description: "Copper peptide for skin health and cellular regeneration.",
-    inStock: true,
-    featured: false
-  },
-  {
-    id: 8,
-    name: "GHRP-6",
-    fullName: "Growth Hormone Releasing Peptide-6",
-    category: "Growth Hormone",
-    price: 139.99,
-    purity: "99.7%",
-    size: "5mg",
-    rating: 4.7,
-    reviews: 145,
-    benefits: ["GH release", "Appetite stimulation", "Recovery"],
-    description: "Growth hormone releasing peptide with appetite stimulating effects.",
-    inStock: true,
-    featured: false
+    name: "Follistatin 344",
+    fullName: "Follistatin 344 (0.1mg)",
+    category: "Muscle Growth",
+    price: 500,
+    size: "0.1mg",
+    description: "Follistatin 344 peptide, 0.1mg vial.",
+    currency: "ILS"
   }
 ];
 
@@ -176,7 +105,6 @@ const Products = () => {
       switch(sortBy) {
         case "price-low": return a.price - b.price;
         case "price-high": return b.price - a.price;
-        case "rating": return b.rating - a.rating;
         default: return a.name.localeCompare(b.name);
       }
     });
@@ -267,37 +195,18 @@ const Products = () => {
             {filteredProducts.map((product) => (
               <Card 
                 key={product.id} 
-                className={`group hover:shadow-card-custom transition-smooth border-border/50 bg-card relative overflow-hidden ${
-                  product.featured ? 'ring-2 ring-primary/20' : ''
-                }`}
+                className="group hover:shadow-card-custom transition-smooth border-border/50 bg-card relative overflow-hidden"
               >
-                {product.featured && (
-                  <div className="absolute top-4 left-4 z-10">
-                    <Badge className="bg-primary text-primary-foreground">
-                      Featured
-                    </Badge>
-                  </div>
-                )}
+
                 
-                {!product.inStock && (
-                  <div className="absolute top-4 right-4 z-10">
-                    <Badge variant="secondary" className="bg-destructive/10 text-destructive">
-                      Out of Stock
-                    </Badge>
-                  </div>
-                )}
+
                 
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-2">
                     <Badge variant="secondary" className="text-xs">
                       {product.category}
                     </Badge>
-                    <div className="text-right">
-                      <div className="text-sm text-muted-foreground">Purity</div>
-                      <div className="text-sm font-semibold text-primary">{product.purity}</div>
-                    </div>
                   </div>
-                  
                   <CardTitle className="text-lg font-bold text-card-foreground group-hover:text-primary transition-smooth">
                     {product.name}
                   </CardTitle>
@@ -314,12 +223,8 @@ const Products = () => {
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-primary">${product.price}</span>
-                        {product.originalPrice && (
-                          <span className="text-sm text-muted-foreground line-through">
-                            ${product.originalPrice}
-                          </span>
-                        )}
+                        <span className="text-xl font-bold text-primary">₪{product.price}</span>
+                        {/* No originalPrice field */}
                       </div>
                       <div className="text-xs text-muted-foreground">{product.size} vial</div>
                     </div>

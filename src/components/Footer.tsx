@@ -1,142 +1,75 @@
+
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
-      {/* Main Footer */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <img 
-              src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
-              alt="PeptoLab" 
-              className="h-8 w-auto"
-            />
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Advanced peptide solutions with pharmaceutical-grade quality. 
-              Trusted by researchers and health optimization enthusiasts worldwide.
-            </p>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Facebook className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Twitter className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Instagram className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-primary">
-                <Linkedin className="w-4 h-4" />
-              </Button>
-            </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4 text-foreground">Quick Links</h4>
-            <ul className="space-y-2">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Products", href: "/products" },
-                { name: "About Us", href: "/about" },
-                { name: "Contact", href: "/contact" },
-                { name: "Research", href: "#" },
-                { name: "Blog", href: "#" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    to={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors story-link"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          {/* Product Categories */}
-          <div>
-            <h4 className="font-semibold mb-4 text-foreground">Categories</h4>
-            <ul className="space-y-2">
-              {[
-                { name: "Recovery & Healing", category: "Recovery & Healing" },
-                { name: "Growth & Longevity", category: "Growth & Longevity" }, 
-                { name: "Cognitive Enhancement", category: "Cognitive Enhancement" },
-                { name: "Anti-Aging", category: "Anti-Aging" },
-                { name: "Growth Hormone", category: "Growth Hormone" },
-                { name: "Research Compounds", category: "Recovery & Performance" }
-              ].map((item) => (
-                <li key={item.name}>
-                  <Link 
-                    to={`/products?category=${encodeURIComponent(item.category)}`}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors story-link"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold mb-4 text-foreground">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <div className="text-sm text-muted-foreground">Email</div>
-                  <a href="mailto:info@peptolab.com" className="text-sm hover:text-primary transition-colors">
-                    info@peptolab.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <div className="text-sm text-muted-foreground">Phone</div>
-                  <a href="tel:+1-800-PEPTIDES" className="text-sm hover:text-primary transition-colors">
-                    +1 (800) PEPTIDES
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <div className="text-sm text-muted-foreground">Address</div>
-                  <p className="text-sm">
-                    123 Science Drive<br />
-                    Biotech Park, CA 90210
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+  <footer className="bg-card border-t border-border">
+    <div className="container mx-auto px-6 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        {/* Company Info */}
+        <div className="space-y-4">
+          <img 
+            src="/lovable-uploads/logo2.PNG" 
+            alt="PeptoLab" 
+            className="h-12 w-auto"
+          />
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            Premium peptides & supplements for research and health optimization.
+          </p>
         </div>
-
-        <Separator className="my-8" />
-
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <Link to="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link to="#" className="hover:text-primary transition-colors">Shipping Policy</Link>
-            <Link to="#" className="hover:text-primary transition-colors">Return Policy</Link>
-          </div>
-          <div className="text-sm text-muted-foreground">
-            © 2024 PeptoLab. For research purposes only.
+        {/* Navigation */}
+        <div>
+          <h4 className="font-semibold mb-4 text-foreground">Navigation</h4>
+          <ul className="space-y-2">
+            <li><Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
+            <li><Link to="/products" className="text-sm text-muted-foreground hover:text-primary transition-colors">Products</Link></li>
+            <li><Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link></li>
+            <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+          </ul>
+        </div>
+        {/* Contact Info */}
+        <div>
+          <h4 className="font-semibold mb-4 text-foreground">Contact</h4>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+              <div>
+                <div className="text-sm text-muted-foreground">Email</div>
+                <a href="mailto:info@peptolab.com" className="text-sm hover:text-primary transition-colors">
+                  info@peptolab.com
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Phone className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+              <div>
+                <div className="text-sm text-muted-foreground">Phone</div>
+                <a href="tel:+1-800-PEPTIDES" className="text-sm hover:text-primary transition-colors">
+                  +1 (800) PEPTIDES
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+              <div>
+                <div className="text-sm text-muted-foreground">Address</div>
+                <p className="text-sm">
+                  123 Science Drive<br />
+                  Biotech Park, CA 90210
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+      <div className="mt-10 text-center text-sm text-muted-foreground">
+        © 2025 PeptoLab. For research purposes only.
+      </div>
+    </div>
+  </footer>
   );
 };
 

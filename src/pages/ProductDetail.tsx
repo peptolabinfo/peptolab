@@ -18,101 +18,196 @@ import {
 import { useToast } from "@/hooks/use-toast";
 
 // Extended product data with detailed information
+
+function ProductDetail() {
+  const navigate = useNavigate();
 const productData: { [key: string]: any } = {
-  "bpc-157": {
+  "ghrp-6": {
+  detailedDescription: "GHRP-6 is a potent growth hormone secretagogue that mimics ghrelin, the hunger hormone. It is used in research to study its effects on growth hormone release, appetite stimulation, and metabolic regulation. GHRP-6 has shown promise in animal studies for muscle growth, fat loss, and recovery enhancement. Its unique mechanism of action makes it a valuable tool for investigating endocrine and metabolic pathways.",
     id: 1,
-    name: "BPC-157",
-    fullName: "Body Protection Compound-157",
-    category: "Recovery & Healing",
-    price: 89.99,
-    originalPrice: 99.99,
-    purity: "99.9%",
-    size: "5mg",
-    rating: 4.9,
-    reviews: 127,
-    benefits: ["Accelerated healing", "Gut health support", "Joint protection", "Tendon repair"],
-    description: "BPC-157 is a powerful healing peptide that promotes tissue repair and reduces inflammation throughout the body.",
-    inStock: true,
-    featured: true,
-    images: ["/api/placeholder/400/400"],
-    specifications: {
-      "Molecular Weight": "1419.53 g/mol",
-      "Sequence": "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val",
-      "Purity": ">99% by HPLC",
-      "Storage": "-20°C",
-      "Stability": "2 years frozen"
-    },
-    detailedDescription: `BPC-157, also known as Body Protection Compound-157, is a pentadecapeptide derived from a protective protein found naturally in human gastric juice. This remarkable peptide has garnered significant attention in the research community for its extraordinary healing properties and regenerative capabilities.
-
-Originally discovered through extensive research into gastric protection mechanisms, BPC-157 has shown promising results in promoting healing throughout various tissues in the body. Its unique sequence of 15 amino acids enables it to interact with multiple biological pathways involved in tissue repair, angiogenesis, and inflammatory response modulation.
-
-Research studies have demonstrated BPC-157's ability to accelerate healing in tendons, ligaments, muscles, and even organs. The peptide appears to work by promoting the formation of new blood vessels (angiogenesis), enhancing collagen synthesis, and modulating inflammatory processes to create an optimal environment for tissue regeneration.`,
-    researchBacking: [
-      "Over 50 published studies on healing acceleration",
-      "Demonstrated efficacy in tendon and ligament repair",
-      "Shown to protect and heal gastric tissue",
-      "Research indicates improved wound healing rates"
+    name: "GHRP-6",
+    fullName: "GHRP-6 10mg",
+    category: "Growth Hormone",
+    price: 500,
+    size: "10mg",
+  description: "GHRP-6 (Growth Hormone Releasing Peptide-6) is a synthetic hexapeptide that stimulates the secretion of growth hormone. It is widely used in research for its potential to promote muscle growth, enhance recovery, and support fat loss. GHRP-6 also increases appetite and may improve sleep quality.",
+    currency: "ILS",
+    details: "GHRP-6 is a growth hormone releasing peptide used for research in growth hormone stimulation.",
+  images: ["/lovable-uploads/products/GHRP-6.jpeg"],
+    benefits: [
+      "Stimulates natural growth hormone release",
+      "Supports muscle growth and recovery",
+      "May improve sleep quality",
+      "Promotes fat loss"
     ],
-    dosageGuidelines: `Research protocols typically use doses ranging from 200-800 mcg per day, administered subcutaneously. The peptide is commonly reconstituted with bacteriostatic water and stored refrigerated. Administration is often divided into multiple daily doses for optimal stability and absorption.
-
-Important: This product is intended for research purposes only. Consult with qualified researchers or healthcare professionals familiar with peptide research before use.`,
+    specifications: {
+      "Molecular Weight": "873.01 g/mol",
+      "Sequence": "His-D-Trp-Ala-Trp-D-Phe-Lys-NH2",
+      "CAS Number": "87616-84-0",
+      "Purity": ">98% (HPLC)",
+      "Form": "Lyophilized powder",
+      "Storage": "-20°C, protected from light"
+    },
+    researchBacking: [
+      "Bowers, C.Y. et al. (1991). GHRP-6 stimulates GH release in humans and animals.",
+      "Research supports increased muscle mass and reduced fat in animal models.",
+      "Studied for its role in appetite stimulation and metabolic regulation."
+    ],
+    dosageGuidelines: "Typical research doses: 100-300mcg per day, subcutaneously. Reconstitute with bacteriostatic water.",
     safetyInformation: [
-      "Generally well-tolerated in research studies",
-      "No significant adverse effects reported at research doses",
-      "Should be stored properly to maintain stability",
-      "For research use only - not for human consumption"
+      "For research use only",
+      "Store reconstituted peptide refrigerated"
     ]
   },
-  "tb-500": {
+  "retatrutide": {
+  detailedDescription: "Retatrutide is a next-generation investigational peptide that acts as a triple agonist for GLP-1, GIP, and glucagon receptors. It is being studied for its ability to induce significant weight loss, improve glucose metabolism, and regulate appetite. Early clinical trials have demonstrated its potential for treating obesity and metabolic syndrome, making it a promising candidate for future therapies.",
     id: 2,
-    name: "TB-500",
-    fullName: "Thymosin Beta-4",
-    category: "Recovery & Performance",
-    price: 129.99,
-    purity: "99.8%",
+    name: "Retatrutide",
+    fullName: "Retatrutide 5mg",
+    category: "Weight Management",
+    price: 650,
     size: "5mg",
-    rating: 4.8,
-    reviews: 89,
-    benefits: ["Muscle recovery", "Wound healing", "Flexibility", "Anti-inflammatory"],
-    description: "TB-500 is a synthetic version of Thymosin Beta-4, a naturally occurring peptide that promotes healing, recovery, and tissue regeneration.",
-    inStock: true,
-    featured: true,
-    images: ["/api/placeholder/400/400"],
-    specifications: {
-      "Molecular Weight": "4963.4 g/mol",
-      "Sequence": "43 amino acids",
-      "Purity": ">99% by HPLC",
-      "Storage": "-20°C",
-      "Stability": "2 years frozen"
-    },
-    detailedDescription: `TB-500 is a synthetic version of Thymosin Beta-4 (Tβ4), a naturally occurring peptide present in virtually all human and animal cells. This powerful 43-amino acid peptide plays a crucial role in cellular migration, angiogenesis, and wound healing processes throughout the body.
-
-Thymosin Beta-4 was first isolated from the thymus gland and has since been found to be one of the most abundant proteins in platelets and many other cell types. Its primary mechanism of action involves the regulation of actin, a protein that forms part of the cell's structural framework and is essential for cell movement and muscle contraction.
-
-Research has shown that TB-500 can promote the migration of endothelial cells, which are crucial for the formation of new blood vessels. This angiogenic property, combined with its anti-inflammatory effects, makes it particularly valuable for tissue repair and regeneration studies.`,
-    researchBacking: [
-      "Extensive research on wound healing acceleration",
-      "Studies show improved flexibility and range of motion",
-      "Demonstrated anti-inflammatory properties",
-      "Research indicates enhanced muscle recovery"
+  description: "Retatrutide is a novel investigational peptide designed for weight management and metabolic research. It acts as a multi-receptor agonist, targeting GLP-1, GIP, and glucagon receptors, and is being studied for its effects on appetite suppression, glucose regulation, and body weight reduction.",
+    currency: "ILS",
+    details: "Retatrutide is a research peptide for weight management studies.",
+  images: ["/lovable-uploads/products/Retatrutide.jpeg"],
+    benefits: [
+      "Supports weight management research",
+      "Potential appetite regulation",
+      "May improve metabolic health"
     ],
-    dosageGuidelines: `Research protocols typically employ doses of 2-5mg administered subcutaneously, often 2-3 times per week. The peptide is usually reconstituted with bacteriostatic water and should be used within the recommended timeframe after reconstitution.
-
-Loading phases may utilize higher frequencies, while maintenance protocols often reduce to once or twice weekly administrations. Proper storage and handling are essential for maintaining peptide integrity.`,
+    specifications: {
+      "Molecular Weight": "~4,000 g/mol",
+      "Sequence": "Synthetic peptide",
+      "CAS Number": "N/A (investigational)",
+      "Purity": ">95% (HPLC)",
+      "Form": "Lyophilized powder",
+      "Storage": "-20°C, protected from light"
+    },
+    researchBacking: [
+      "Clinical trials show significant weight loss in obese subjects (Jastreboff et al., 2023).",
+      "Demonstrated improved glucose tolerance in preclinical studies.",
+      "Ongoing research for diabetes and metabolic syndrome."
+    ],
+    dosageGuidelines: "Typical research doses: 0.1-0.5mg per week, subcutaneously. Reconstitute with bacteriostatic water.",
     safetyInformation: [
-      "Well-documented safety profile in research",
-      "Minimal side effects reported in studies",
-      "Naturally occurring peptide with good tolerance",
-      "For research purposes only"
+      "For research use only",
+      "Store reconstituted peptide refrigerated"
+    ]
+  },
+  "ghk-cu": {
+  detailedDescription: "GHK-Cu is a naturally occurring copper peptide complex that plays a crucial role in tissue remodeling and repair. It has been extensively researched for its regenerative effects on skin, hair follicles, and internal organs. GHK-Cu is known to stimulate collagen synthesis, promote wound healing, and exhibit anti-inflammatory and antioxidant properties. Its applications extend to cosmetic, dermatological, and anti-aging research.",
+    id: 3,
+    name: "GHK-Cu",
+    fullName: "GHK-Cu 10mg",
+    category: "Anti-Aging",
+    price: 500,
+    size: "10mg",
+  description: "GHK-Cu (Copper Peptide) is a naturally occurring tripeptide with a high affinity for copper ions. It is widely researched for its regenerative effects on skin, wound healing, and anti-aging properties. GHK-Cu is also studied for its role in hair growth and tissue repair.",
+    currency: "ILS",
+    details: "GHK-Cu is a copper peptide used in anti-aging and skin regeneration research.",
+  images: ["/lovable-uploads/products/GHK-Cu.jpeg"],
+    benefits: [
+      "Promotes skin regeneration",
+      "Supports wound healing",
+      "May reduce signs of aging",
+      "Antioxidant properties"
+    ],
+    specifications: {
+      "Molecular Weight": "340.0 g/mol",
+      "Sequence": "Gly-His-Lys-Cu",
+      "CAS Number": "89030-95-5",
+      "Purity": ">98% (HPLC)",
+      "Form": "Lyophilized powder",
+      "Storage": "-20°C, protected from light"
+    },
+    researchBacking: [
+      "Pickart, L. et al. (2015). GHK-Cu stimulates collagen production and wound healing.",
+      "Research supports anti-inflammatory and antioxidant effects.",
+      "Used in cosmetic and dermatological studies for skin repair."
+    ],
+    dosageGuidelines: "Typical research doses: 1-10mg per week, subcutaneously or topically. Reconstitute with bacteriostatic water.",
+    safetyInformation: [
+      "For research use only",
+      "Store reconstituted peptide refrigerated"
+    ]
+  },
+  "bpc-157-tb-500": {
+  detailedDescription: "The combination of BPC-157 and TB-500 is designed to maximize tissue repair and recovery. BPC-157, derived from a protective protein in the stomach, accelerates healing of tendons, ligaments, and muscles. TB-500, a synthetic version of Thymosin Beta-4, enhances cell migration and regeneration. Together, they are used in research for musculoskeletal injuries, inflammation reduction, and recovery optimization.",
+    id: 4,
+    name: "BPC-157 + TB-500",
+    fullName: "BPC-157 (3mg) + TB-500 (2mg)",
+    category: "Recovery & Healing",
+    price: 550,
+    size: "3mg + 2mg",
+  description: "This combination of BPC-157 and TB-500 is designed for advanced research in tissue repair, recovery, and inflammation reduction. BPC-157 is known for its healing properties in tendons and ligaments, while TB-500 (Thymosin Beta-4) supports cell migration and regeneration.",
+    currency: "ILS",
+    details: "A combination of BPC-157 and TB-500 peptides for advanced recovery research.",
+  images: ["/lovable-uploads/products/bpc-157 + tb-500.jpeg"],
+    benefits: [
+      "Accelerates tissue repair",
+      "Supports joint and tendon healing",
+      "May reduce inflammation",
+      "Synergistic recovery effects"
+    ],
+    specifications: {
+      "BPC-157 MW": "1419.53 g/mol",
+      "TB-500 MW": "4963.5 g/mol",
+      "Form": "Lyophilized powder",
+      "Purity": ">98% (HPLC)",
+      "Storage": "-20°C, protected from light"
+    },
+    researchBacking: [
+      "Sikiric, P. et al. (2018). BPC-157 accelerates tendon and ligament healing in animal models.",
+      "TB-500 shown to promote cell migration and tissue regeneration (Goldstein et al., 2012).",
+      "Combination used in research for musculoskeletal injuries."
+    ],
+    dosageGuidelines: "Typical research doses: BPC-157 (200-500mcg/day), TB-500 (2-5mg/week), subcutaneously. Reconstitute with bacteriostatic water.",
+    safetyInformation: [
+      "For research use only",
+      "Store reconstituted peptide refrigerated"
+    ]
+  },
+  "follistatin-344": {
+  detailedDescription: "Follistatin 344 is a synthetic peptide fragment that inhibits myostatin, a protein that limits muscle growth. By blocking myostatin, Follistatin 344 promotes muscle hypertrophy and regeneration. It is studied for its potential in treating muscle wasting diseases, enhancing athletic performance, and improving body composition. Research also explores its role in regenerative medicine and tissue engineering.",
+    id: 5,
+    name: "Follistatin 344",
+    fullName: "Follistatin 344 (0.1mg)",
+    category: "Muscle Growth",
+    price: 500,
+    size: "0.1mg",
+  description: "Follistatin 344 is a synthetic peptide fragment of the follistatin protein, studied for its ability to inhibit myostatin and promote muscle growth. It is used in research for muscle wasting diseases, body composition improvement, and regenerative medicine.",
+    currency: "ILS",
+    details: "Follistatin 344 is a research peptide for muscle growth studies.",
+  images: ["/lovable-uploads/products/Follistatin 344.jpeg"],
+    benefits: [
+      "Supports muscle growth research",
+      "May inhibit myostatin",
+      "Potential for body composition improvement"
+    ],
+    specifications: {
+      "Molecular Weight": "37638.6 g/mol",
+      "Sequence": "Ala-Glu-Gly-Gly... (344 aa)",
+      "CAS Number": "104098-50-8",
+      "Purity": ">95% (HPLC)",
+      "Form": "Lyophilized powder",
+      "Storage": "-20°C, protected from light"
+    },
+    researchBacking: [
+      "Amthor, H. et al. (2004). Follistatin increases muscle mass by inhibiting myostatin.",
+      "Research supports use in muscle wasting and regenerative studies.",
+      "Investigated for body composition improvement."
+    ],
+    dosageGuidelines: "Typical research doses: 100-300mcg per week, subcutaneously. Reconstitute with bacteriostatic water.",
+    safetyInformation: [
+      "For research use only",
+      "Store reconstituted peptide refrigerated"
     ]
   }
 };
 
-const ProductDetail = () => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+  const { slug } = useParams<{ slug: string }>();
   const { toast } = useToast();
-
   const product = slug ? productData[slug] : null;
 
   if (!product) {
@@ -183,12 +278,20 @@ const ProductDetail = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Product Images */}
           <div className="space-y-4">
-            <div className="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg flex items-center justify-center border">
-              <div className="text-center p-8">
-                <FlaskConical className="w-20 h-20 mx-auto mb-4 text-primary" />
-                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                <p className="text-muted-foreground">Research Grade Peptide</p>
-              </div>
+            <div className="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg flex items-center justify-center border overflow-hidden">
+              {product.images && product.images.length > 0 ? (
+                <img
+                  src={product.images[0]}
+                  alt={product.name}
+                  className="object-contain w-full h-full"
+                />
+              ) : (
+                <div className="text-center p-8">
+                  <FlaskConical className="w-20 h-20 mx-auto mb-4 text-primary" />
+                  <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                  <p className="text-muted-foreground">Research Grade Peptide</p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -197,20 +300,13 @@ const ProductDetail = () => {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <Badge variant="secondary">{product.category}</Badge>
-                {product.featured && (
-                  <Badge className="bg-primary text-primary-foreground">Featured</Badge>
-                )}
+
               </div>
               <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
               <p className="text-lg text-muted-foreground mb-6">{product.fullName}</p>
 
               <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-3xl font-bold text-primary">${product.price}</span>
-                {product.originalPrice && (
-                  <span className="text-lg text-muted-foreground line-through">
-                    ${product.originalPrice}
-                  </span>
-                )}
+                <span className="text-3xl font-bold text-primary">₪{product.price}</span>
                 <span className="text-sm text-muted-foreground">per {product.size} vial</span>
               </div>
             </div>
@@ -363,6 +459,6 @@ const ProductDetail = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProductDetail;

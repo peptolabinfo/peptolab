@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, FlaskConical, Award, Microscope, Shield, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -10,11 +11,14 @@ const About = () => {
       <section className="py-20 bg-subtle-gradient">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <img 
-              src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
-              alt="PeptoLab" 
-              className="mx-auto h-16 w-auto mb-8"
-            />
+            <div className="mb-8 animate-bounce-in">
+              <img 
+                src="/lovable-uploads/logo1.PNG" 
+                alt="PeptoLab" 
+                className="mx-auto w-auto"
+                style={{ height: "32rem" }}
+              />
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
               About <span className="text-primary">PeptoLab</span>
             </h1>
@@ -44,9 +48,11 @@ const About = () => {
                   We work exclusively with certified laboratories and follow the most stringent 
                   quality control processes to ensure that every product meets pharmaceutical standards.
                 </p>
-                <Button variant="hero" size="lg">
-                  View Our Products
-                </Button>
+                <Link to="/products">
+                  <Button variant="hero" size="lg">
+                    View Our Products
+                  </Button>
+                </Link>
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-hero-gradient rounded-2xl opacity-10"></div>

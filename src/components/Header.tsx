@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -52,13 +52,6 @@ const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <Button variant="ghost" size="icon" className="relative hover:bg-accent transition-smooth focus-visible:ring-primary">
-              <ShoppingCart className="h-4 w-4" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center font-medium">
-                0
-              </span>
-              <span className="sr-only">Shopping cart with 0 items</span>
-            </Button>
             <Link to="/contact">
               <Button variant="default" size="sm">
                 Get Started
@@ -108,10 +101,6 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="pt-4 border-t border-border">
-                  <Button variant="ghost" size="sm" className="w-full justify-start mb-2">
-                    <ShoppingCart className="h-4 w-4 mr-2" />
-                    Cart (0)
-                  </Button>
                   <Link to="/contact" onClick={() => setIsOpen(false)}>
                     <Button className="w-full">
                       Get Started
