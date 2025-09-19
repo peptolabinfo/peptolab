@@ -70,7 +70,7 @@ const Header = () => {
             <SheetContent side="right" className="w-80">
               <div className="flex items-center justify-between mb-8">
                 <img 
-                  src="/lovable-uploads/9cc793e6-859a-46b0-b39f-f4b1b7907b03.png" 
+                  src="/lovable-uploads/logo2.PNG" 
                   alt="PeptoLab - Premium Peptides & Supplements" 
                   className="h-8 w-auto"
                 />
