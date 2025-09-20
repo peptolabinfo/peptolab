@@ -17,7 +17,8 @@ const allProducts = [
     price: 500,
     size: "10mg",
     description: "GHRP-6 peptide, 10mg vial.",
-    currency: "ILS"
+    currency: "ILS",
+    image: "/lovable-uploads/products/GHRP-6.jpeg"
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ const allProducts = [
     price: 650,
     size: "5mg",
     description: "Retatrutide peptide, 5mg vial.",
-    currency: "ILS"
+    currency: "ILS",
+    image: "/lovable-uploads/products/Retatrutide.jpeg"
   },
   {
     id: 3,
@@ -37,7 +39,8 @@ const allProducts = [
     price: 500,
     size: "10mg",
     description: "GHK-Cu peptide, 10mg vial.",
-    currency: "ILS"
+    currency: "ILS",
+    image: "/lovable-uploads/products/GHK-Cu.jpeg"
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ const allProducts = [
     price: 550,
     size: "3mg + 2mg",
     description: "BPC-157 (3mg) + TB-500 (2mg) combo vial.",
-    currency: "ILS"
+    currency: "ILS",
+    image: "/lovable-uploads/products/bpc-157 + tb-500.jpeg"
   },
   {
     id: 5,
@@ -57,7 +61,8 @@ const allProducts = [
     price: 500,
     size: "0.1mg",
     description: "Follistatin 344 peptide, 0.1mg vial.",
-    currency: "ILS"
+    currency: "ILS",
+    image: "/lovable-uploads/products/Follistatin 344.jpeg"
   }
 ];
 
@@ -197,10 +202,15 @@ const Products = () => {
                 key={product.id} 
                 className="group hover:shadow-card-custom transition-smooth border-border/50 bg-card relative overflow-hidden"
               >
-
-                
-
-                
+                {/* Product Image */}
+                <div className="w-full flex justify-center items-center bg-muted/40" style={{ minHeight: '180px' }}>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="object-contain h-36 w-auto"
+                    loading="lazy"
+                  />
+                </div>
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-2">
                     <Badge variant="secondary" className="text-xs">
@@ -214,12 +224,10 @@ const Products = () => {
                     {product.fullName}
                   </CardDescription>
                 </CardHeader>
-                
                 <CardContent className="space-y-4">
                   <p className="text-sm text-muted-foreground line-clamp-2">
                     {product.description}
                   </p>
-                  
                   <div className="flex items-center justify-between pt-4 border-t border-border">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
@@ -229,17 +237,16 @@ const Products = () => {
                       <div className="text-xs text-muted-foreground">{product.size} vial</div>
                     </div>
                   </div>
-                  
                   <div className="flex justify-center pt-2">
-                  <Link to={`/product/${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}`}>
-                    <Button 
-                      variant="outline" 
-                      className="w-full"
-                    >
-                      <Info className="w-4 h-4 mr-2" />
-                      View Details
-                    </Button>
-                  </Link>
+                    <Link to={`/product/${product.name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}`}>
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                      >
+                        <Info className="w-4 h-4 mr-2" />
+                        View Details
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

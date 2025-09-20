@@ -24,11 +24,12 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <div className="mb-8 animate-bounce-in">
-            <img 
-              src="/lovable-uploads/logo1.PNG" 
-              alt="PeptoLab - Premium Peptides & Supplements" 
-              className="mx-auto w-auto"
-              style={{ height: "32rem" }}
+            <img
+              src="/lovable-uploads/logo1.PNG"
+              alt="PeptoLab - Premium Peptides & Supplements"
+              className="mx-auto w-auto object-contain"
+              style={{ maxHeight: '60vw', maxWidth: '100%', height: 'auto' }}
+              sizes="(max-width: 640px) 80vw, 32rem"
             />
           </div>
           
