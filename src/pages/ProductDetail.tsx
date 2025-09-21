@@ -33,7 +33,7 @@ const productData: { [key: string]: any } = {
   description: "GHRP-6 (Growth Hormone Releasing Peptide-6) is a synthetic hexapeptide that stimulates the secretion of growth hormone. It is widely used in research for its potential to promote muscle growth, enhance recovery, and support fat loss. GHRP-6 also increases appetite and may improve sleep quality.",
     currency: "ILS",
     details: "GHRP-6 is a growth hormone releasing peptide used for research in growth hormone stimulation.",
-  images: ["/lovable-uploads/products/GHRP-6.jpeg"],
+  images: ["/lovable-uploads/products/ghrp-6.jpeg"],
     benefits: [
       "Stimulates natural growth hormone release",
       "Supports muscle growth and recovery",
@@ -70,7 +70,7 @@ const productData: { [key: string]: any } = {
   description: "Retatrutide is a novel investigational peptide designed for weight management and metabolic research. It acts as a multi-receptor agonist, targeting GLP-1, GIP, and glucagon receptors, and is being studied for its effects on appetite suppression, glucose regulation, and body weight reduction.",
     currency: "ILS",
     details: "Retatrutide is a research peptide for weight management studies.",
-  images: ["/lovable-uploads/products/Retatrutide.jpeg"],
+  images: ["/lovable-uploads/products/retatrutide.jpeg"],
     benefits: [
       "Supports weight management research",
       "Potential appetite regulation",
@@ -106,7 +106,7 @@ const productData: { [key: string]: any } = {
   description: "GHK-Cu (Copper Peptide) is a naturally occurring tripeptide with a high affinity for copper ions. It is widely researched for its regenerative effects on skin, wound healing, and anti-aging properties. GHK-Cu is also studied for its role in hair growth and tissue repair.",
     currency: "ILS",
     details: "GHK-Cu is a copper peptide used in anti-aging and skin regeneration research.",
-  images: ["/lovable-uploads/products/GHK-Cu.jpeg"],
+  images: ["/lovable-uploads/products/ghk-cu.jpeg"],
     benefits: [
       "Promotes skin regeneration",
       "Supports wound healing",
@@ -143,7 +143,7 @@ const productData: { [key: string]: any } = {
   description: "This combination of BPC-157 and TB-500 is designed for advanced research in tissue repair, recovery, and inflammation reduction. BPC-157 is known for its healing properties in tendons and ligaments, while TB-500 (Thymosin Beta-4) supports cell migration and regeneration.",
     currency: "ILS",
     details: "A combination of BPC-157 and TB-500 peptides for advanced recovery research.",
-  images: ["/lovable-uploads/products/bpc-157 + tb-500.jpeg"],
+  images: ["/lovable-uploads/products/bpc-157-tb-500.jpeg"],
     benefits: [
       "Accelerates tissue repair",
       "Supports joint and tendon healing",
@@ -179,7 +179,7 @@ const productData: { [key: string]: any } = {
   description: "Follistatin 344 is a synthetic peptide fragment of the follistatin protein, studied for its ability to inhibit myostatin and promote muscle growth. It is used in research for muscle wasting diseases, body composition improvement, and regenerative medicine.",
     currency: "ILS",
     details: "Follistatin 344 is a research peptide for muscle growth studies.",
-  images: ["/lovable-uploads/products/Follistatin 344.jpeg"],
+  images: ["/lovable-uploads/products/follistatin-344.jpeg"],
     benefits: [
       "Supports muscle growth research",
       "May inhibit myostatin",

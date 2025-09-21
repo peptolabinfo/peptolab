@@ -18,7 +18,7 @@ const allProducts = [
     size: "10mg",
     description: "GHRP-6 peptide, 10mg vial.",
     currency: "ILS",
-    image: "/lovable-uploads/products/GHRP-6.jpeg"
+  image: "/lovable-uploads/products/ghrp-6.jpeg"
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const allProducts = [
     size: "5mg",
     description: "Retatrutide peptide, 5mg vial.",
     currency: "ILS",
-    image: "/lovable-uploads/products/Retatrutide.jpeg"
+  image: "/lovable-uploads/products/retatrutide.jpeg"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const allProducts = [
     size: "10mg",
     description: "GHK-Cu peptide, 10mg vial.",
     currency: "ILS",
-    image: "/lovable-uploads/products/GHK-Cu.jpeg"
+  image: "/lovable-uploads/products/ghk-cu.jpeg"
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const allProducts = [
     size: "3mg + 2mg",
     description: "BPC-157 (3mg) + TB-500 (2mg) combo vial.",
     currency: "ILS",
-    image: "/lovable-uploads/products/bpc-157 + tb-500.jpeg"
+  image: "/lovable-uploads/products/bpc-157-tb-500.jpeg"
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const allProducts = [
     size: "0.1mg",
     description: "Follistatin 344 peptide, 0.1mg vial.",
     currency: "ILS",
-    image: "/lovable-uploads/products/Follistatin 344.jpeg"
+  image: "/lovable-uploads/products/follistatin-344.jpeg"
   }
 ];
 
