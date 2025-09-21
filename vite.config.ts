@@ -15,4 +15,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: "/peptolab/", // 👈 required for GitHub Pages (repo name)
 }));
